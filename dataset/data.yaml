@@ -1,0 +1,47 @@
+# YOLOv8 Dataset Configuration for Monument Protection
+# =====================================================
+
+# Path to dataset root directory (absolute or relative path)
+path: dataset
+
+# Paths to train and validation images (relative to 'path')
+train: images/train
+val: images/val
+
+# Optional: Path to test images
+# test: images/test
+
+# Number of classes in your dataset
+nc: 5
+
+# Class names - modify according to your dataset
+# Each index corresponds to the class_id in label files
+names:
+  0: person          # Normal person detection
+  1: vandal          # Person performing vandalism
+  2: fire            # Fire/smoke detection
+  3: crowd           # Large crowd gathering
+  4: weapon          # Weapon detection
+
+# Optional: Download script or URL (for public datasets)
+# download: https://example.com/dataset.zip
+
+# =====================================================
+# LABEL FORMAT GUIDE
+# =====================================================
+# Each image needs a corresponding .txt file with same name
+# Example: images/train/photo001.jpg -> labels/train/photo001.txt
+#
+# Each line in label file represents one object:
+# <class_id> <x_center> <y_center> <width> <height>
+#
+# All coordinates are NORMALIZED (0 to 1):
+# - x_center = object_center_x / image_width
+# - y_center = object_center_y / image_height
+# - width = object_width / image_width
+# - height = object_height / image_height
+#
+# Example label file content:
+# 0 0.45 0.32 0.12 0.25
+# 2 0.78 0.65 0.08 0.15
+# =====================================================
